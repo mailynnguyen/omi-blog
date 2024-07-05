@@ -1,12 +1,12 @@
 "use client";
-import React from "react";
-import {useState} from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import LandingImg from "@/../public/images/landing.webp";
 import SpeechBubbleImg from "@/../public/images/speech-bubble.webp";
 
 const Landing = () => {
     const [isHover, setIsHover] = useState(false);
+
     const handleMouseEnter = () => {
         setIsHover(true);
     }
@@ -16,11 +16,11 @@ const Landing = () => {
     }
 
     return (
-        <div className="flex w-full justify-center mt-[4%] relative">
+        <div className="flex w-full justify-center mt-[4%] font-fredoka text-2xl relative text-center">
             <Image src={LandingImg} alt="landing-img" className="h-auto w-[80%]" />
             <div className="absolute h-auto w-[25%] bottom-[16%] left-[14%]">
                 <Image src={SpeechBubbleImg} alt="speech-bubble-img" />
-                <div className="text-2xl font-medium absolute top-[11%] w-[60%] ml-[12%]">
+                <div className="absolute top-[11%] w-[60%] ml-[12%]">
                     <p onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
                         {isHover 
                         ? "Hi! I'm Omi and welcome to my page! Here I share my life to you. :p" 
@@ -30,7 +30,7 @@ const Landing = () => {
             </div>
             <div className="bottom-[10%] right-[14%] w-[25%] h-auto absolute">
                 <Image src={SpeechBubbleImg} alt="speech-bubble-img" className="transform scale-x-[-1]" />
-                <div className="text-2xl font-medium absolute top-[10%] w-[60%] ml-[24%]">
+                <div className="absolute top-[10%] w-[60%] ml-[24%]">
                     <p onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
                         {isHover 
                         ? "And these are some of my lovely humans <3<3. Anyways I hope you enjoy!"

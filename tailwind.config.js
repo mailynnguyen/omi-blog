@@ -13,6 +13,10 @@ module.exports = {
           "gray-200": "#A4A4A4",
         },
       },
+      fontFamily: {
+        "permanent-marker": ["var(--font-permanent-marker)"],
+        fredoka: ["var(--font-fredoka)"],
+      },
       keyframes: {
         marquee: {
           "0%": { transform: "translateX(0%)" },

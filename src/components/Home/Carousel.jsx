@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const Carousel = () => {
     return (
-        <div className="relative flex">
+        <div className="relative flex overflow-hidden">
             <div className="flex animate-marquee">
                 {carousel.map((image, index) => (
                     <div key={index} className="mx-8">
