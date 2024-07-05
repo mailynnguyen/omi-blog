@@ -16,7 +16,7 @@ const Landing = () => {
     }
 
     return (
-        <div className="flex w-full justify-center mt-[5%] relative">
+        <div className="flex w-full justify-center mt-[4%] relative">
             <Image src={LandingImg} alt="landing-img" className="h-auto w-[80%]" />
             <div className="absolute h-auto w-[25%] bottom-[16%] left-[14%]">
                 <Image src={SpeechBubbleImg} alt="speech-bubble-img" />
@@ -33,7 +33,7 @@ const Landing = () => {
                 <div className="text-2xl font-medium absolute top-[10%] w-[60%] ml-[24%]">
                     <p onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
                         {isHover 
-                        ? "And these are my lovely humans <3<3. Anyways I hope you enjoy!"
+                        ? "And these are some of my lovely humans <3<3. Anyways I hope you enjoy!"
                         : "ruff ruuuf rufff <3<3. rufruf ruffruf rufff!"}
                     </p>
                 </div>
