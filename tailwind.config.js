@@ -14,8 +14,8 @@ module.exports = {
         },
       },
       fontFamily: {
-        "permanent-marker": ["var(--font-permanent-marker)"],
-        fredoka: ["var(--font-fredoka)"],
+        "permanent-marker": "var(--font-permanent-marker)",
+        fredoka: "var(--font-fredoka)",
       },
       keyframes: {
         marquee: {
@@ -25,7 +25,7 @@ module.exports = {
         "marquee-continuation": {
           "0%": { transform: "translateX(-100%)" },
           "100%": { transform: "translateX(0%)" },
-        }
+        },
       },
       animation: {
         marquee: "marquee 30s linear infinite",

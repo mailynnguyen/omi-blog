@@ -10,7 +10,7 @@ export const polaroids = [
     },
     {
         name: polaroid2,
-        text: "me at the beach"
+        text: "me at the beach",
     },
     {
         name: polaroid3,

@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const SectionDivider = () => {
     return (
-        <div className="my-[8%] m-auto w-[20%] h-auto">
+        <div className="my-[8%] m-auto w-[20%] h-auto !important ">
             <Image src={SectionDividerImg} alt="section-divider-img" />
         </div>
     )

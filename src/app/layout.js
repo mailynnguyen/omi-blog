@@ -1,6 +1,7 @@
 import { Inter, Permanent_Marker, Fredoka } from "next/font/google";
 import Navigation from "@/components/Navigation.jsx";
 import Footer from "@/components/Footer.jsx";
+
 import "./globals.css";
 
 const inter = Inter({ 
@@ -27,7 +28,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`bg-omi-gray-100 ${inter.className} ${fredoka.variable} ${permanentMarker.variable}`}>
+      <body className={`bg-omi-gray-100 ${inter.className} ${permanentMarker.variable} ${fredoka.variable}`}>
         <Navigation />
         {children}
         <Footer />
