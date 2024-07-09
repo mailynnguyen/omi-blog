@@ -1,8 +1,8 @@
 "use client";
 import React, { useState } from "react";
-import { pages } from "@/data/album/pages";
-import Title from "../Title.jsx";
+import { pages } from "@/data/album/pages.js";
 import { TbChevronCompactLeft, TbChevronCompactRight } from "react-icons/tb";
+import Circle from "./Circle";
 
 const Pages = () => {
     const [curr, setCurr] = useState(0)
@@ -19,28 +19,35 @@ const Pages = () => {
     }
 
     return (
-            <div className="flex overflow-hidden relative">
+        <div className="overflow-hidden flex flex-col">
+            <div className="flex flex-row mx-auto mb-[3%]">
+                {pages.map((_, index) => (
+                    <div key={index} onClick={() => setCurr(index)} >
+                        <Circle bgColor={curr === index && "bg-white"}/>
+                    </div>
+                ))}
+            </div>
+            <div className="flex relative">
                 {pages.map((page, index) => (
                     <div 
                         key={index} 
-                        className="grid transition ease-out duration-500"
+                        className="grid transition ease-in-out duration-500"
                         style={{ transform: `translateX(-${curr * 100}%)` }}
                     >
-                        <div className="justify-self-center mb-[4%]">
-                            <Title text={page.caption} fontSize="text-4xl" border="border-b-2" />
-                        </div>
-                        {page.grid}
+                        {page}
                     </div>
                 ))}
                 <div className="absolute w-full h-full flex justify-between">
                     <div onClick={handleBack} onMouseLeave={() => setLeftHover(false)} onMouseEnter={() => setLeftHover(true)} className="w-[12%] flex justify-center items-center hover:cursor-pointer">
-                        <TbChevronCompactLeft className={` transition ${leftHover && "scale-125" }`} color="white" size={72} />
+                        <TbChevronCompactLeft className={` transition ease-in-out ${leftHover && "scale-125" }`} color="white" size={72} />
                     </div>
                     <div onClick={handleNext} onMouseLeave={() => setRightHover(false)} onMouseEnter={() => setRightHover(true)} className="w-[12%] flex justify-center items-center hover:cursor-pointer">
-                        <TbChevronCompactRight className={` transition ${rightHover && "scale-125"}`}color="white" size={72} />
+                        <TbChevronCompactRight className={` transition ease-in-out ${rightHover && "scale-125"}`} color="white" size={72} />
                     </div>
                 </div>
             </div>
+                
+        </div>
     )
 }
 
