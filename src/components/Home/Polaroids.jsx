@@ -60,7 +60,6 @@ const Polaroids = () => {
                     {polaroids.map((polaroid, index) => (
                         <div key={index} className={`${index % 2 === 0 && "justify-self-end"}`}>
                         <Polaroid 
-                            
                             image={polaroid.name} 
                             text={polaroid.text}
                         />
