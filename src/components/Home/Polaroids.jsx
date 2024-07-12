@@ -47,22 +47,22 @@ const Polaroids = () => {
                         </div>
                     ))}
                     <div className="absolute w-full h-full flex justify-between">
-                    <div onClick={handleBack} className={`w-[16%] flex justify-center items-center`}>
-                        <TbChevronCompactLeft className={`${leftAnimation && "animate-scale"}`} color="black" size={86} />
+                        <div onClick={handleBack} className={`w-[16%] flex justify-center items-center`}>
+                            <TbChevronCompactLeft className={`${leftAnimation && "animate-scale"}`} color="black" size={86} />
+                        </div>
+                        <div onClick={handleNext} className="w-[16%] flex justify-center items-center">
+                            <TbChevronCompactRight className={`${rightAnimation && "animate-scale"}`} color="black" size={86} />
+                        </div>
                     </div>
-                    <div onClick={handleNext} className="w-[16%] flex justify-center items-center">
-                        <TbChevronCompactRight className={`${rightAnimation && "animate-scale"}`} color="black" size={86} />
-                    </div>
-                </div>
                 </div>
             ) : (
                 <div ref={ref} className={`${inView && "lg:animate-fade-down lg:animate-delay-500 lg:animate-duration-[1500ms]"} mt-[4%] mb-[6%] xl:flex grid grid-cols-2 xl:justify-center`}>
                     {polaroids.map((polaroid, index) => (
                         <div key={index} className={`${index % 2 === 0 && "justify-self-end"}`}>
-                        <Polaroid 
-                            image={polaroid.name} 
-                            text={polaroid.text}
-                        />
+                            <Polaroid 
+                                image={polaroid.name} 
+                                text={polaroid.text}
+                            />
                         </div>
                     ))}
                 </div>
