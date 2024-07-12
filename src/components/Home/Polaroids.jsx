@@ -5,8 +5,11 @@ import Polaroid from "./Polaroid";
 import { polaroids } from "@/data/home/polaroids.js";
 import Button from "@/components/home/Button.jsx";
 import { TbChevronCompactLeft, TbChevronCompactRight } from "react-icons/tb";
+import useView from "@/components/useView.jsx";
 
 const Polaroids = () => {
+    const [inView, ref] = useView();
+
     const isMobile = useMediaQuery({ query: '(max-width: 769px)' })
     const [curr, setCurr] = useState(0)
     const [rightAnimation, setRightAnimation] = useState(false)
@@ -29,9 +32,9 @@ const Polaroids = () => {
     }
 
     return (
-        <div className="overflow-hidden pb-[2%]"> 
+        <div ref={ref} className={`overflow-hidden pb-[2%]`}> 
             {isMobile ? (
-                <div className="relative mt-[6%] flex mb-[10%]">
+                <div  className="relative mt-[6%] flex mb-[10%]">
                     {polaroids.map((polaroid, index) => (
                         <div className="transition ease-in-out duration-500" 
                         style={{ transform: `translateX(-${curr * 100}%)` }}
@@ -53,7 +56,7 @@ const Polaroids = () => {
                 </div>
                 </div>
             ) : (
-                <div className="mt-[4%] mb-[6%] xl:flex grid grid-cols-2 xl:justify-center">
+                <div ref={ref} className={`${inView && "lg:animate-fade-down lg:animate-delay-500 lg:animate-duration-[1500ms]"} mt-[4%] mb-[6%] xl:flex grid grid-cols-2 xl:justify-center`}>
                     {polaroids.map((polaroid, index) => (
                         <div key={index} className={`${index % 2 === 0 && "justify-self-end"}`}>
                         <Polaroid 
@@ -65,7 +68,7 @@ const Polaroids = () => {
                     ))}
                 </div>
             )}
-            <Button text="See More" className="mt-[5%] w-full flex justify-center" />
+            <Button ref={ref} text="See More" className={`${inView && "animate-fade-right animate-duration-500 animate-delay-500 animate-ease-in"} mt-[5%] w-full flex justify-center`} />
         </div>
     )
 }

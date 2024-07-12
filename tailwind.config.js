@@ -33,13 +33,20 @@ module.exports = {
           "0%, 100%": { transform: "scale(1, 1)" },
           "30%": { transform: "scale(1.25, 1.25)" },
         },
+        zoom: {
+          "0%": { transform: "scale(0, 0)" },
+          "100%": { transform: "scale(1, 1)", rotate: "-10deg", "transition-delay": "2000ms" },
+        }
       },
       animation: {
         marquee: "marquee 30s linear infinite",
         "marquee-continuation": "marquee-continuation 30s linear infinite",
         scale: "scale 0.3s ease-in",
+        zoom: "zoom 0.8s ease-out",
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require('tailwindcss-animated')
+  ],
 };
