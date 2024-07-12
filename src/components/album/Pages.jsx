@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { pages } from "@/data/album/pages.js";
 import { TbChevronCompactLeft, TbChevronCompactRight } from "react-icons/tb";
 import Circle from "./Circle";
+import Grid from "./Grid";
 
 const Pages = () => {
     const [curr, setCurr] = useState(0)
@@ -34,7 +35,7 @@ const Pages = () => {
                         className="transition ease-in-out duration-500"
                         style={{ transform: `translateX(-${curr * 100}%)` }}
                     >
-                        {page}
+                        <Grid images={page} />
                     </div>
                 ))}
                 <div className="absolute w-full h-full flex justify-between">
