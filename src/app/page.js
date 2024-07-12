@@ -1,8 +1,8 @@
-import About from "@/components/home/About.jsx";
-import Landing from "@/components/home/Landing.jsx";
-import SectionDivider from "@/components/SectionDivider";
-import Carousel from "@/components/home/Carousel.jsx";
-import Polaroids from "@/components/home/Polaroids.jsx";
+import About from "@/components/About.jsx";
+import Landing from "@/components/Landing.jsx";
+import SectionDivider from "@/components/SectionDivider.jsx";
+import Carousel from "@/components/Carousel.jsx";
+import Polaroids from "@/components/Polaroids.jsx";
 
 export default function Home() {
   return (

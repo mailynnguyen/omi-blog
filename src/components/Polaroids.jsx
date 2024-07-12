@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import Polaroid from "./Polaroid";
 import { polaroids } from "@/data/home/polaroids.js";
-import Button from "@/components/home/Button.jsx";
+import Button from "@/components/Button.jsx";
 import { TbChevronCompactLeft, TbChevronCompactRight } from "react-icons/tb";
 import useView from "@/components/useView.jsx";
 
