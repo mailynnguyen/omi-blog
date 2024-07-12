@@ -7,6 +7,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      screens: {
+        "mobile": "500px",
+      },
       colors: {
         omi: {
           "gray-100": "#EFEFEF",
@@ -26,10 +29,15 @@ module.exports = {
           "0%": { transform: "translateX(-100%)" },
           "100%": { transform: "translateX(0%)" },
         },
+        scale: {
+          "0%, 100%": { transform: "scale(1, 1)" },
+          "30%": { transform: "scale(1.25, 1.25)" },
+        },
       },
       animation: {
         marquee: "marquee 30s linear infinite",
         "marquee-continuation": "marquee-continuation 30s linear infinite",
+        scale: "scale 0.3s ease-in",
       },
     },
   },

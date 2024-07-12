@@ -1,12 +1,15 @@
 "use client";
 import React, { useState } from "react";
+import { useMediaQuery } from "react-responsive";
 import Image from "next/image";
 import LandingImg from "@/../public/images/landing.webp";
 import SpeechBubbleImg from "@/../public/images/speech-bubble.webp";
 
 const Landing = () => {
-    const [isHover, setIsHover] = useState(false);
+    const isXL = useMediaQuery({ query: '(min-width: 1280px)' })
 
+    const [isHover, setIsHover] = useState(false);
+    console.log(isXL)
     const handleMouseEnter = () => {
         setIsHover(true);
     }
@@ -16,29 +19,30 @@ const Landing = () => {
     }
 
     return (
-        <div className="flex w-full justify-center mt-[4%] font-fredoka text-2xl relative text-center">
-            <Image src={LandingImg} alt="landing-img" className="h-auto w-[80%]" />
-            <div className="absolute h-auto w-[25%] bottom-[16%] left-[14%]">
-                <Image src={SpeechBubbleImg} alt="speech-bubble-img" />
-                <div className="absolute top-[11%] w-[60%] ml-[12%]">
-                    <p onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-                        {isHover 
-                        ? "Hi! I'm Omi and welcome to my page! Here I share my life to you. :p" 
-                        : "ruff ruff rufff ruf! ruuuf ruuuff! ruff ruf :p"}
-                    </p>
-                </div>        
+        <div className="mx-auto w-full text-2xl relative">
+            <Image src={LandingImg} alt="landing-img" className="relative h-[80vh] object-cover" />
+            <div className="absolute h-[25%] bg-gradient-to-b to-omi-gray-100 from-transparent bottom-0 left-0 right-0 z-40"></div>
+            <div className="text-white absolute left-[6%] top-[10%]">
+                <p className="text-5xl mobile:text-6xl sm:text-7xl md:text-8xl font-bold mobile:leading-snug sm:leading-snug md:leading-snug">Hello, I'm <span className="text-[#C19A6B]">Omi</span>!</p>
+                <p className="text-2xl mobile:text-3xl sm:text-4xl md:text-5xl font-medium leading-loose mobile:leading-loose sm:leading-loose md:leading-loose">and welcome to my page.</p>
+                <p className="text-xl md:text-3xl font-medium leading-snug md:leading-snug">here are pictures of me and my best dawgs :p</p>
+                <p className="text-2xl md:text-4xl font-semibold leading-loose md:leading-loose">hope you enjoy, hehe</p>
             </div>
-            <div className="bottom-[10%] right-[14%] w-[25%] h-auto absolute">
-                <Image src={SpeechBubbleImg} alt="speech-bubble-img" className="transform scale-x-[-1]" />
-                <div className="absolute top-[10%] w-[60%] ml-[24%]">
-                    <p onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+            {isXL && (
+                <div className="bottom-[13%] left-[35%] w-[25%] -rotate-[10deg] h-auto absolute">
+                    <div className="scale-x-[-1]">
+                        <Image src={SpeechBubbleImg} alt="speech-bubble-img" className="transform scale-x-[-1]" />
+                    </div>
+                    <div className="font-fredoka text-center absolute top-[15%] w-[70%] ml-[8%]">
+                        <p onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
                         {isHover 
-                        ? "And these are some of my lovely humans <3<3. Anyways I hope you enjoy!"
-                        : "ruff ruuuf rufff <3<3. rufruf ruffruf rufff!"}
-                    </p>
+                            ? "i like eggs, underwear, and humans! but not dogs, ruff >(" 
+                            : "ruff ruff rufff ruf! ruuuf ruuuff! ruff ruf :p"}
+                        </p>
+                    </div>
                 </div>
-            </div>
-
+            )}
+           
         </div>
     )
 }

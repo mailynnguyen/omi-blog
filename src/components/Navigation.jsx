@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const Navigation = () => {
     return (
-        <div className="sticky top-0 z-50 flex flex-row justify-between bg-white p-[1%] px-[2%]">
+        <div className="sticky top-0 z-50 shadow-xl flex flex-row justify-between bg-white p-[1%] px-[2%]">
             <Link href="/">
                 <div className="ml-[2%]">
                     {/* insert image */}

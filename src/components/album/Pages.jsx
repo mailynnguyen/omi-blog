@@ -31,7 +31,7 @@ const Pages = () => {
                 {pages.map((page, index) => (
                     <div 
                         key={index} 
-                        className="grid transition ease-in-out duration-500"
+                        className="transition ease-in-out duration-500"
                         style={{ transform: `translateX(-${curr * 100}%)` }}
                     >
                         {page}

@@ -6,7 +6,7 @@ import polaroid4 from "@/../public/images/model-omi.webp";
 export const polaroids = [
     {
         name: polaroid1,
-        text: "me with my dawgs",
+        text: "me with my dawg",
     },
     {
         name: polaroid2,
@@ -14,10 +14,10 @@ export const polaroids = [
     },
     {
         name: polaroid3,
-        text: "",
+        text: "i need underwear >(",
     },
     {
         name: polaroid4,
-        text: "",
-    }
+        text: "on a hike",
+    },
 ];
