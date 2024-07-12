@@ -1,6 +1,5 @@
 import Image from "next/image";
 
-
 const Grid = ({ images }) => {
     return (
         <div className="w-screen sm:columns-2 md:columns-3 lg:columns-4 gap-4 px-[12%]">

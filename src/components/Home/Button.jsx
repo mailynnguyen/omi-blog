@@ -7,8 +7,7 @@ const Button = ({ text, className }) => {
                 <p className="text-nowrap">{text}</p>
                 <div className="w-[80%] mx-auto border-white border-b-2"></div>
             </div>
-        </Link>
-        
+        </Link> 
     )
 }
 
